@@ -1,0 +1,64 @@
+{
+	"name": "midhundevasia/typo3-serverclock",
+	"type": "typo3-cms-extension",
+	"description": "Show server time in backend view",
+	"homepage": "https://github.com/midhundevasia/typo3-serverclock",
+	"support": {
+		"issues": "https://github.com/midhundevasia/typo3-serverclock/issues"
+	},
+	"version" : "1.0.0",
+	"license": ["GPL-3.0+"],
+	"authors": [
+		{
+		  "name": "Midhun Devasia",
+		  "email": "hello@midhundevasia.com",
+		  "homepage": "http://midhundevasia.com/"
+		}
+	],
+	"keywords": [
+		"TYPO3", "backend", "server", "time", "clock", "timezone"
+	],
+	"require": {
+		"php" : ">=5.5",
+		"typo3/cms": "^7.6 || ^8.4"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.8.0",
+		"mikey179/vfsStream": "1.6.0",
+		"typo3-ci/typo3cms": "6.2.4"
+	},
+	"replace": {
+		"server_clock": "self.version",
+		"typo3-ter/server_clock": "self.version"
+	},
+	"config": {
+		"vendor-dir": "Build/vendor",
+		"bin-dir": "Build/bin",
+		"preferred-install" : {
+			"typo3/cms": "source"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Tutorboy\\ServerClock\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tutorboy\\ServerClock\\Tests\\": "Tests/"
+		}
+	},
+	"scripts" : {
+		"post-update-cmd" : "sh ./Build/setup.sh",
+		"post-autoload-dump": [
+            "mkdir -p ./Build/Web/typo3conf/ext/",
+            "[ -L ./Build/Web/typo3conf/ext/server_clock ] || ln -snvf ../../../../. ./Build/Web/typo3conf/ext/server_clock"
+        ]
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": "./Build/Web"
+		}
+	}
+}
