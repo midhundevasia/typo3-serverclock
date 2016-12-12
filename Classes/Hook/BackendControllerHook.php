@@ -46,25 +46,42 @@ class BackendControllerHook {
 		}
 		if (version_compare(TYPO3_branch, '7.0', '>=') && version_compare(TYPO3_branch, '8.0', '<')) {
 			$queryElement = '#typo3-topbar-navigation .typo3-topbar-navigation-items';
-		}	
-		$this->getPageRenderer()->addJsInlineCode('ServerClock', '			
+		}
+		if (version_compare(TYPO3_branch, '6.0', '>=') && version_compare(TYPO3_branch, '7.0', '<')) {
+			$queryElement = 'typo3-toolbar';
+		}
+		$this->getPageRenderer()->addJsInlineCode('ServerClock', '
 			var ClockWidget = ClockWidget || {};
 			ClockWidget.serverClockTimeZone = "' . date_default_timezone_get() . '";
 			ClockWidget.serverClockStartTime = "' . date('Y-m-d H:i:s') . '";
 			ClockWidget.serverClockDateTimeFormat = "' . $extensionConfiguration['datetimeFormat']['value'] . '";
 			ClockWidget.queryElement = "' . $queryElement . '";
 		');
-		$this->getPageRenderer()->loadRequireJsModule('TYPO3/CMS/ServerClock/ClockWidget');
-		
+
+		// TYPO3 6 Compactibility
+		if ($queryElement == 'typo3-toolbar') {
+			$path = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('server_clock');
+			$this->getPageRenderer()->addJsFile($path . 'Resources/Public/JavaScript/ClockWidget-T36Compact.js');
+		} else {
+			$this->getPageRenderer()->loadRequireJsModule('TYPO3/CMS/ServerClock/ClockWidget');
+		}
+
 		$this->getPageRenderer()->addCssInlineBlock('ServerClockCss', '
 			#tutorboy-serverclock {
 				display: inline;
-				padding: 4px 10px;
+				padding: 4px 15px;
 				height: 45px;
 				float: left;
 				text-align:right;
 				color: #aaa;
 				border-right: 1px solid #111111;
+			}
+			/*Only for TYPO3 6*/
+			.t36-com {
+				height: 30px !important;
+			}
+			#tutorboy-serverclock-inner {
+				margin-top: -7px;
 			}
 		');
 	}

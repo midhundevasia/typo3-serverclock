@@ -50,5 +50,6 @@ ServerClock is licensed under GNU General Public License (GPLv3) - see the `LICE
 
 
 ## Screenshot
+![](https://raw.githubusercontent.com/midhundevasia/typo3-serverclock/master/Documentation/Images/Version6.png)
 ![](https://raw.githubusercontent.com/midhundevasia/typo3-serverclock/master/Documentation/Images/Version7.png)
 ![](https://raw.githubusercontent.com/midhundevasia/typo3-serverclock/master/Documentation/Images/Version8.png)
