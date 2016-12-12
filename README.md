@@ -1,4 +1,4 @@
-# ServerClock -Server Clock: Server Time and Timezone
+# ServerClock: Server Time and Timezone
 
 A Clock which shows server time and timezone in backend. The extension is available on [TER](https://typo3.org/extensions/repository/view/server_clock), you can install it from TYPO3 ExtensionManager or via composer. 
 
