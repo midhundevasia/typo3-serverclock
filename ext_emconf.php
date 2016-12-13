@@ -14,8 +14,8 @@
  */
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'Server Clock: Server Time and Timezone',
-	'description' => 'A Clock which shows server time and timezone in backend',
-	'category' => 'services',
+	'description' => 'A Clock which shows server time and timezone in the backend. The clock widget is simple and based on Javascript, and appears in the top right toolbar area. You set the DateTime format in the extension configuration wizard.',
+	'category' => 'be',
 	'author' => 'Midhun Devasia',
 	'author_email' => 'hello@midhundevasia.com',
 	'state' => 'stable',
@@ -23,10 +23,10 @@ $EM_CONF[$_EXTKEY] = [
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '1.0.0',
+	'version' => '1.0.1',
 	'constraints' => [
 		'depends' => [
-			'typo3' => '7.6.0-8.9.99',
+			'typo3' => '6.2.0-8.9.99',
 		],
 		'conflicts' => [],
 		'suggests' => [],

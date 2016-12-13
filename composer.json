@@ -1,12 +1,12 @@
 {
 	"name": "midhundevasia/typo3-serverclock",
 	"type": "typo3-cms-extension",
-	"description": "Show server time in backend view",
+	"description": "A Clock which shows server time and timezone in the backend. The clock widget is simple and based on Javascript, and appears in the top right toolbar area. You set the DateTime format in the extension configuration wizard.",
 	"homepage": "https://github.com/midhundevasia/typo3-serverclock",
 	"support": {
 		"issues": "https://github.com/midhundevasia/typo3-serverclock/issues"
 	},
-	"version" : "1.0.0",
+	"version" : "1.0.1",
 	"license": ["GPL-3.0+"],
 	"authors": [
 		{
@@ -20,7 +20,7 @@
 	],
 	"require": {
 		"php" : ">=5.5",
-		"typo3/cms": "^7.6 || ^8.4"
+		"typo3/cms": "^6.2 || ^7.6 || ^8.4"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.8.0",
