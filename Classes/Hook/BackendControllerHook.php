@@ -16,7 +16,6 @@ namespace Tutorboy\ServerClock\Hook;
  */
 
 use TYPO3\CMS\Backend\Controller\BackendController;
-use MT\Hotelsystem\Utility\OurUtility;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
