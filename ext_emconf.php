@@ -12,7 +12,7 @@
  *
  * ServerClock - Shows server clock
  */
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF[$_EXTKEY] = array(
 	'title' => 'Server Clock: Server Time and Timezone',
 	'description' => 'A Clock which shows server time and timezone in the backend. The clock widget is simple and based on Javascript, and appears in the top right toolbar area. You set the DateTime format in the extension configuration wizard.',
 	'category' => 'be',
@@ -23,12 +23,12 @@ $EM_CONF[$_EXTKEY] = [
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '1.0.1',
-	'constraints' => [
-		'depends' => [
+	'version' => '1.0.2',
+	'constraints' => array(
+		'depends' => array(
 			'typo3' => '6.2.0-8.9.99',
-		],
-		'conflicts' => [],
-		'suggests' => [],
-	],
-];
+		),
+		'conflicts' => array(),
+		'suggests' => array(),
+	),
+);
